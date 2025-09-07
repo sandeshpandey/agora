@@ -16,14 +16,23 @@ const swaggerOptions = {
             description: "API documentation for Agora project",
         },
     },
-    apis: ["./src/routes/*.ts"], // point to your route files
+    apis: ["./src/routes/*.ts", "./src/server.ts"],
 };
 
 const swaggerSpec = swaggerJsdoc(swaggerOptions);
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Routes
-app.get("/", (req, res) => res.json({ status: "ok", message: "API is healthy" }));
+/**
+ * @swagger
+ * /:
+ *   get:
+ *     summary: Get welcome message
+ *     responses:
+ *       200:
+ *         description: Welcome message
+ */
+app.get("/", (req, res) => res.json({ status: "ok", message: "Hello Welcome to Agora World" }));
 app.use("/profile", profileRoutes);
 
 export default app;

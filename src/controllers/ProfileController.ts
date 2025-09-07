@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Profile from "../models/Prodile.model";
+import Profile from "../models/Profile.model";
 
 export const createProfile = async (req: Request, res: Response) => {
     try {

@@ -5,8 +5,7 @@ export interface IProfile extends Document {
     name: string;
     age: number;
     email: string;
-    bio?: string;
-    dob?: Date
+    dob: Date
 }
 
 const ProfileSchema: Schema = new Schema(
@@ -14,7 +13,6 @@ const ProfileSchema: Schema = new Schema(
         name: { type: String, required: true },
         age: { type: Number, required: true },
         email: { type: String, required: true, unique: true },
-        bio: { type: String },
         dob: { type: Date }
     },
     {

@@ -18,6 +18,7 @@ const router = Router();
  *               - name
  *               - age
  *               - email
+ *               - dob
  *             properties:
  *               name:
  *                 type: string
@@ -25,13 +26,14 @@ const router = Router();
  *                 type: number
  *               email:
  *                 type: string
- *               bio:
+ *               dob:
  *                 type: string
  *     responses:
  *       201:
  *         description: Profile created
  */
 router.post("/", createProfile);
+
 
 
 
